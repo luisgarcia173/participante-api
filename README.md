@@ -116,6 +116,7 @@ Actuator: http://localhost:8080/actuator/health
 ## Open API
 - Swagger: http://localhost:8080/swagger-ui/index.html
 - Docs: http://localhost:8080/v3/api-docs
+- Collection Postman (import): está na pasta docs (Participante API.postman_collection.json)
 
 ![swagger page](/docs/swaggerPage.png "Swagger Page").
 
