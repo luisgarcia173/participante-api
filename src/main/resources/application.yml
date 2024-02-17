@@ -1,6 +1,6 @@
 ## Application ##
 server:
-  port: ${PORT:8080}
+  port: $PORT
 spring:
   application:
     name: customer-api
