@@ -49,6 +49,48 @@ dependencies {
 	testImplementation 'org.testcontainers:junit-jupiter'
 }
 
+jacoco {
+	toolVersion = "0.8.11"
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = 'CLASS'
+			excludes = [
+					'com.luisgarcia.controllers.handler.*',
+					'com.luisgarcia.controllers.dtos.*',
+					'com.luisgarcia.repositories.entities.*',
+					'com.luisgarcia.ParticipanteApiApplication'
+			]
+			limit {
+				counter = 'INSTRUCTION'
+				value = 'COVEREDRATIO'
+				minimum = 0.9
+			}
+		}
+	}
+}
+
+jacocoTestReport {
+	reports {
+		html.destination file("${buildDir}/jacocoHtml")
+	}
+	dependsOn test
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					'com/luisgarcia/controllers/handler/**',
+					'com/luisgarcia/controllers/dtos/**',
+					'com/luisgarcia/repositories/entities/**',
+					'com/luisgarcia/ParticipanteApiApplication'
+			])
+		}))
+	}
+	finalizedBy jacocoTestCoverageVerification
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
 }
