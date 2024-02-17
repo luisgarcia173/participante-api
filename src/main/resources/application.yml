@@ -1,4 +1,6 @@
 ## Application ##
+server:
+  port: $PORT
 spring:
   application:
     name: customer-api
