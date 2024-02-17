@@ -123,7 +123,7 @@ Actuator: http://localhost:8080/actuator/health
 ## Code Coverage
 Para cobertura de testes estou utilizando o Jacoco que deve compilar ao final do step de testes pré configurado.
 
-**Exemplo do report gerado:**
+**Exemplo do report gerado:** 
 
 ![jacoco report](/docs/jacocoReport.png "Jacoco Report").
 
