@@ -1,0 +1,24 @@
+## Application ##
+spring:
+  application:
+    name: customer-api
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:participantedb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+## Actuator ##
+springdoc:
+  show-actuator: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
