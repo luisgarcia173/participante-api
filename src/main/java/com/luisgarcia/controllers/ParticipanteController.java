@@ -19,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @Tag(name = "Participante", description = "Endpoint de participante")
 @RestController
 @Validated
